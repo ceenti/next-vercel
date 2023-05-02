@@ -6,17 +6,14 @@ import {PropsWithChildren, FC} from 'react';
 import styles from '../../styles/Home.module.css'
 
 interface MainLayout {
-  title: string
+  title?: string
 }
 
-const MainLayout: FC<PropsWithChildren> = ({
-  children,
-  title
-}) => {
+const MainLayout: FC<PropsWithChildren<MainLayout>> = ({title='', children}) => {
   return (
     <>
     <Head>
-      <title>{title}</title>
+      <title>{`${title}`}</title>
       <meta name="description" content="About Demo 01" />
       <link rel="icon" href="/favicon.ico" />
     </Head>

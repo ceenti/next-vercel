@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties, FC }  from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -7,17 +7,15 @@ interface LinkProps {
   href: string
 }
 
-const style = {
-  // color: '#00703f',
-  // textDecoration: 'underline',
+const style: CSSProperties = {
   backgroundColor: '#0070f3'
 }
-const CustomLink = (props: LinkProps) => {
+const CustomLink : FC <LinkProps> = ({label, href}) =>{
   const { asPath } = useRouter();
-  const { label, href } = props;
+
   return (
     <Link href={href} legacyBehavior>
-      <a style={ asPath === href ? style : {}}>
+      <a style={ asPath === href ? style : undefined}>
         {label}
       </a>
     </Link>

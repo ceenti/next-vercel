@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
 import MainLayout from '../components/layouts/MainLayout';
-import { DarkLayout } from '../components/layouts/DarkLayout';
+import {DarkLayout} from '../components/layouts/DarkLayout';
 
-export default function About(){
+export default function AboutPage(){
   return (
     <>
       <h1 className={styles.title}>
@@ -18,7 +18,7 @@ export default function About(){
   )
 }
 
-About.getLayout = function getLayout(page){
+AboutPage.getLayout = function getLayout(page:ReactElement){
   return(
     <MainLayout>
       <DarkLayout>
